@@ -3,7 +3,7 @@
     justify-content: flex-end;
     align-items: flex-end;
 
-    margin-top: 50px;
+    margin: 10px;
 
 }
 
@@ -18,19 +18,27 @@
 .imageAndText img {
     width: 48px;
     height: 48px;
-
 }
 
 .text {
-    width: 527px;
-    max-height: 100vh;
-    height: 100%;
+    max-width: 1000px;
+    width: 100%;
     background-color: #0066CC;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 10px;
+    position: relative;
 }
 
 .text::after {
-
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    display: block;
+    height: 10px;
+    width: 20px;
+    z-index: -1;
+    background: inherit;
+    clip-path: url(#svgPath);
 }
 
 .name {
@@ -44,19 +52,16 @@
 }
 
 .messageText {
-    width: 489px;
-    height: 20px;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     margin: 10px;
+    word-wrap: break-word;
 }
 
 .time {
-    width: 26px;
-    height: 12px;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 600;
