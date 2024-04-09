@@ -1,5 +1,18 @@
 .buttonsContainer {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .editableSpanContainer {
+}
+
+button {
+    background-color: #0066CC;
+    &:hover{
+        background-color: #1984ef;
+    }
+    &:active{
+        background-color: #0a4680;
+    }
 }
