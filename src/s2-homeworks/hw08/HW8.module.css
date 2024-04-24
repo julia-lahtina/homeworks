@@ -1,23 +1,35 @@
 .item {
+
 }
 
 .item:last-of-type {
 }
 
 .users {
+    width: 600px;
 }
 
 .buttonsContainer {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .container {
+
 }
 
 .thead {
+    background-color: #eaeaea;
+    font-weight: 700;
 }
 
 .nameCol {
+    height: 30px;
 }
 
 .ageCol {
+
 }
