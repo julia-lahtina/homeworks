@@ -15,7 +15,6 @@ function Clock() {
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
         const idInterval = +setInterval(() => {
             setDate(new Date())
-            console.log('tick')
         }, 1000)
         setTimerId(idInterval)
     }
@@ -23,22 +22,19 @@ function Clock() {
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearInterval(timerId)
+        setTimerId(undefined)
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
-        setShow(!show)
+        setShow(true)
     }
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
-        setShow(!show)
-    }
-
-    const timeStyle = (number: number) => {
-        return number < 10 ? `0${number}` : number
+        setShow(false)
     }
 
 
-    const stringTime = `${timeStyle(date.getHours())}: ${timeStyle(date.getMinutes())} : ${timeStyle(date.getSeconds())}` ||  <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${timeStyle(date.getDay())}.${timeStyle(date.getMonth())}.${date.getFullYear()}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime = date.toLocaleTimeString() ||  <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = date.toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const weekday = new Intl.DateTimeFormat('en-US', {
