@@ -2,17 +2,14 @@
     width: 50vw;
 }
 
-.developer {
-
-}
+.developer {}
 
 .techHeader {
     width: 50vw;
-}
-
-.developerHeader {
 
 }
+
+.developerHeader {}
 
 .row {
     display: flex;
@@ -20,8 +17,27 @@
 
 .rowHeader {
     display: flex;
+
+    background-color: #E5E5E5;
+    padding: 10px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    width: 70vw;
+    margin-top: 20px;
 }
 
 .loading {
+    animation: spin 1s infinite linear;
+    position: absolute;
+    margin-left: 300px
+}
 
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
